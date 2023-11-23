@@ -1,0 +1,106 @@
+<html lang="pt-br">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="script.js" type="module" defer></script>
+  <title>CodeChat!</title>
+
+</head>
+
+<body class="h-screen flex flex-col">
+
+  <div class="font-sans text-base font-normal flex-1 flex flex-col">
+    <nav class="border columns flex-col">
+      <a href="">
+        <div class="flex items-center p-4">
+          <img src="img/bars.svg" alt="Menu" class="pr-8">
+          <img src="img/crudechat.svg" alt="logo">
+        </div>
+      </a>
+    </nav>
+    <div class="flex flex-1">
+      <aside class="flex border flex-col gap-8 px-4 py-4">
+        <a href="#" class="flex items-center pt-8">
+          <span class="pr-2 items-center"><img src="img/home.svg" alt="Dashboard"></span>
+          Dashboard
+        </a>
+        <a href="#" class="flex items-center">
+          <span class="pr-2"><img src="img/forum.svg" alt="Atendimento"></span>
+          Atendimento
+        </a>
+        <a href="#" class="flex items-center">
+          <span class="pr-2"><img src="img/forum.svg" alt="Contatos"></span>
+          Contatos
+        </a>
+      </aside>
+
+      <main class="border m-12 m-0.125 grow rounded-2xl">
+        <div class="flex justify-between items-center mx-4">
+          <h1 class="pt-8 pb-8 pl-8 text-2xl">Contatos</h1>
+          <div class="flex justify-around">
+            <div class="mr-8 ml-4 ps-2 rounded-md h-12 w-80 border border-gray-800 flex items-center gap-2"> 
+              <input class="grow outline-none" type="text" placeholder="Localizar">
+              <button class="bg-stone-300 h-full px-4  rounded-e-md">
+                <span class="material-symbols-outlined">search</span>
+              </button>
+            </div>
+            <div>
+              <button class="rounded-md h-12 w-28 border border-gray-800 bg-stone-300">Importar</button>
+            </div>
+            <div class="pl-8 pr-24">
+              <button id="btnAdd" class="rounded-md h-12 w-28 border border-gray-800 bg-stone-300">Adicionar</button>
+            </div>
+          </div>         
+        </div>
+        <div class="flex-grow border-t border-gray-200"></div>
+        <div id="divTabela"></div>
+        <div class="h-screen flex flex-col items-center p-56 gap-8">
+      </main>
+      <dialog id="modal" class="w-[44rem] h-[33rem] rounded-lg">
+        <h1 class="pl-4 pt-16 text-gray-800">Adicionar contato</h1>
+        <div class="flex-grow border-t border-gray-200"></div>
+        <div class="pb-4">
+          <span class="pl-4 pb-4 text-xs text-gray-800">Dados do contato</span>
+        </div>
+        <div class="flex justify-around pt-8">
+          <div class="flex grow pl-9 text-gray-800x">
+            <label for="inpNome"></label>
+            <input id="inpNome" type="text" placeholder="Nome" class="pl-4 grow border border-stone-500 rounded-md h-11">
+          </div>
+          <div class="flex grow pl-4 pr-9">
+            <label for="inpTelefone"></label>
+            <input id="inpTelefone" type="text" placeholder="Telefone"
+              class="pl-4 grow border border-stone-500 rounded-md">
+          </div>
+        </div>
+        <div class="flex pl-9 pt-8 pr-9">
+          <label for="inpEmail"></label>
+          <input id="inpEmail" type="text" placeholder="E-mail"
+            class="pl-4 grow border border-stone-500 rounded-md h-11">
+        </div>
+        <div class="flex pl-9 pt-8 pr-9">
+          <label for="inpGrupos"></label>
+          <input id="inpGrupos" type="text" placeholder="Grupo"
+            class="pl-4 grow border border-stone-500 rounded-md h-11">
+        </div>
+        <div>
+          <div class="flex justify-end pt-16 items-center">
+            <div>
+            <button id="btnCancelar" class="h-11 border-2 border-red-500 rounded-lg w-28 font-bold text-red-500">Cancelar</button>
+            </div>
+              <div class="pl-8 pr-9">
+              <button id="btnSalvar" class="h-11 boder-2 border-opacity-0 border-stone-800 rounded-lg w-28 bg-green-500 font-bold text-white hidden">OK</button>
+              <div class="pl-8 pr-9">
+                <button id="btnEditar" class="h-11 boder-2 border-opacity-0 border-stone-800 rounded-lg w-28 bg-green-500 font-bold text-white hidden">Editar</button>
+            </div>
+          </div>
+        </div>
+      </dialog>
+</body>
+
+</html>
